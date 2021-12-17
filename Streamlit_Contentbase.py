@@ -107,7 +107,7 @@ Recommendation system có thể giúp quảng bá sản phẩm mới, kiểm so�
         
         st.write("Dữ liệu thiếu sau khi xử lý")
         st.image('missing_value.png')
-        colb, colc = st.beta_columns([1,1])
+        colb, colc = st.columns([1,1])
         with colb:
             st.write("Tên sản phẩm")
             st.image('product_name.png')
@@ -115,7 +115,7 @@ Recommendation system có thể giúp quảng bá sản phẩm mới, kiểm so�
         with colc:
             st.write("Đánh giá trung bình")
             st.image('product_rating.png')                
-        cole, colf = st.beta_columns([1,1])
+        cole, colf = st.columns([1,1])
         with cole:
             st.write("Group of item")
             st.image('group.png')
@@ -130,7 +130,7 @@ Recommendation system có thể giúp quảng bá sản phẩm mới, kiểm so�
         with st.form(key='Tìm kiếm sản phẩm tương tự'):
             input = st.selectbox('Chọn tên sản phẩm bạn muốn tìm kiếm:', data['product_name'])
             submit_button = st.form_submit_button(label='Recommendation')
-            num_of_rec = st.sidebar.number_input("Number items", 1, 10, 1 )
+            num_of_rec = st.sidebar.number_input("Number items", 1, 10, 6 )
         # cosim = load('cosim.npy')
         if submit_button:
             if input is not None:
@@ -156,7 +156,7 @@ Recommendation system có thể giúp quảng bá sản phẩm mới, kiểm so�
                     return a, e, c, d, f
 
                 st.subheader('Sản phẩm gợi ý')
-                col1, col2, col3 = st.beta_columns([1,1,1])
+                col1, col2, col3 = st.columns([1,1,1])
 
                 with col1:
                     product_in_col(0,result)
@@ -165,7 +165,7 @@ Recommendation system có thể giúp quảng bá sản phẩm mới, kiểm so�
                 with col3:
                     product_in_col(2,result)
 
-                col4, col5, col6 = st.beta_columns([1,1,1])
+                col4, col5, col6 = st.columns([1,1,1])
                 with col4:
                     product_in_col(3,result)
                 with col5:
